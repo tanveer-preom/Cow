@@ -3,4 +3,9 @@
 
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
+    <string name="title_text">This is a Title Text</string>
+    <string name="button1_text">Button One</string>
+    <string name="button2_text">Button Two</string>
+    <string name="button3_text">Button Three</string>
+    <string name="banner_ad_unit_id">ca-app-pub-3940256099942544/6300978111</string>
 </resources>
