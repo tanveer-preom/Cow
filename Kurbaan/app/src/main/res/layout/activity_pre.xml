@@ -1,7 +1,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.tanveer.kurbaan.PreActivity"
+    tools:context=".PreActivity"
     android:id="@+id/layout"
     android:orientation="vertical"
     >
@@ -24,9 +24,10 @@
                 android:layout_alignParentLeft="true"
                 android:textSize="20sp"
                 android:textColor="#ffffff"
-                android:text="< Prev"
+                android:text="&lt; পূর্ববর্তী"
                 android:textStyle="bold"
                 android:id="@+id/prev"
+                android:onClick="onPrev"
                 />
             <TextView
                 android:layout_width="wrap_content"
@@ -34,11 +35,13 @@
                 android:textStyle="bold"
                 android:layout_alignParentRight="true"
                 android:textSize="20sp"
-                android:text="next >"
+                android:text="পরবর্তী >"
                 android:textColor="#ffffff"
                 android:id="@+id/next"
+                android:onClick="onNext"
                 />
             <TextView
+                android:id="@+id/pageNum"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerInParent="true"

@@ -1,11 +1,13 @@
 package com.example.tanveer.kurbaan;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.location.Location;
 import android.location.LocationManager;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 
 public class MainActivity extends Activity {
 
@@ -36,5 +38,21 @@ public class MainActivity extends Activity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+    public void btn1Click(View v)
+    {
+        Intent i =new Intent(MainActivity.this,PreActivity.class);
+        startActivity(i);
+
+    }
+    public void btn2Clic(View v)
+    {
+        Intent i =new Intent(MainActivity.this,InActivity.class);
+        startActivity(i);
+    }
+    public void btn3Clic(View v)
+    {
+        Intent i =new Intent(MainActivity.this,PostActivity.class);
+        startActivity(i);
     }
 }

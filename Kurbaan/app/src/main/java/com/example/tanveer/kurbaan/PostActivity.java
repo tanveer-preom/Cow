@@ -7,12 +7,11 @@ import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-public class PreActivity extends Activity {
+public class PostActivity extends Activity {
 
     private FrameLayout frameL;
     private View view;
@@ -32,11 +31,11 @@ public class PreActivity extends Activity {
         pageNum=1;
         message = (TextView) view.findViewById(R.id.txt);
         image = (ImageView) view.findViewById(R.id.img);
-        page.setText("Page "+pageNum+"/3");
-        image.setBackgroundResource(R.drawable.syagotom);
-        message.setText(R.string.pre_page1);
+        page.setText("Page "+pageNum+"/2");
+        image.setBackgroundResource(R.drawable.leather);
+        message.setText(R.string.end_page1);
         title = (TextView) view.findViewById(R.id.title);
-        title.setText("");
+        title.setText(R.string.end_page_1_title);
         frameL.addView(view);
 
 
@@ -56,12 +55,12 @@ public class PreActivity extends Activity {
     }
     public void onNext(View v)
     {
-        if(pageNum==3)
+        if(pageNum==2)
             return;
         next.setTextColor(Color.WHITE);
         previous.setTextColor(Color.WHITE);
         pageNum++;
-        if(pageNum==3)
+        if(pageNum==2)
             next.setTextColor(Color.GRAY);
         setBackground(pageNum);
 
@@ -75,30 +74,23 @@ public class PreActivity extends Activity {
             public void run() {
                 if(i==1)
                 {
-                    page.setText("Page 1/3");
-                    image.setBackgroundResource(R.drawable.syagotom);
-                    message.setText(R.string.pre_page1);
-                    title.setText("");
+                    page.setText("Page 1/2");
+                    image.setBackgroundResource(R.drawable.leather);
+                    message.setText(R.string.end_page1);
+                    title.setText(R.string.end_page_1_title);
 
-                   // frameL.addView(view);
+                    // frameL.addView(view);
 
                 }
                 else if(i==2)
                 {
-                    page.setText("Page 2/3");
-                    image.setBackgroundResource(R.drawable.pre_page2);
-                    message.setText(R.string.pre_page2);
-                    title.setText(R.string.pre_page2_title);
+                    page.setText("Page 2/2");
+                    image.setBackgroundResource(R.drawable.city_clean);
+                    message.setText(R.string.end_page2);
+                    title.setText(R.string.end_page_2_title);
 
                 }
-                else if(i==3)
-                {
-                    page.setText("Page 3/3");
-                    image.setBackgroundResource(R.drawable.pre_page3);
-                    message.setText(R.string.pre_page3);
-                    title.setText(R.string.pre_page3_title);
 
-                }
 
             }
         });

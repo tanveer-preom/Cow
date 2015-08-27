@@ -36,6 +36,8 @@
                 android:textStyle="bold"
                 android:background="@drawable/btn1"
                 android:text="@string/button1_text"
+                android:textSize="22sp"
+                android:onClick="btn1Click"
 
                 />
 
@@ -45,8 +47,10 @@
                 android:layout_weight="1"
                 android:textColor="#fff"
                 android:textStyle="bold"
+                android:textSize="22sp"
                 android:background="@drawable/btn2"
                 android:text="@string/button2_text"
+                android:onClick="btn2Clic"
                 />
 
             <Button
@@ -54,9 +58,11 @@
                 android:layout_height="0dip"
                 android:layout_weight="1"
                 android:textColor="#fff"
+                android:textSize="22sp"
                 android:textStyle="bold"
                 android:background="@drawable/btn3"
                 android:text="@string/button3_text"
+                android:onClick="btn3Clic"
                 />
         </LinearLayout>
     </LinearLayout>
@@ -64,15 +70,14 @@
     <FrameLayout
         android:id="@+id/adView"
         android:layout_width="fill_parent"
-        android:layout_height="80dip"
+        android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         >
         <com.google.android.gms.ads.AdView
             android:id="@+id/adBannerView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:layout_alignParentBottom="true"
+
             ads:adSize="BANNER"
             ads:adUnitId="@string/banner_ad_unit_id">
         </com.google.android.gms.ads.AdView>
