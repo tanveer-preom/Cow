@@ -3,6 +3,7 @@ package com.example.tanveer.kurbaan;
 import android.app.Activity;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -12,6 +13,10 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.google.android.gms.ads.AdListener;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+
 public class PreActivity extends Activity {
 
     private FrameLayout frameL;
@@ -19,6 +24,10 @@ public class PreActivity extends Activity {
     private TextView next,previous,page,message,title;
     private int pageNum;
     private ImageView image;
+
+    private AdRequest adRequest;
+    private AdView mAdView;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,6 +47,22 @@ public class PreActivity extends Activity {
         title = (TextView) view.findViewById(R.id.title);
         title.setText("");
         frameL.addView(view);
+
+        mAdView = (AdView) findViewById(R.id.add);
+        adRequest = new AdRequest.Builder().build();
+        mAdView.loadAd(adRequest);
+
+
+        mAdView.setAdListener(new AdListener() {
+            @Override
+            public void onAdClosed() {
+                super.onAdClosed();
+                Log.d("AdExample", "onAdClose() called");
+                mAdView.destroy();
+
+            }
+
+        });
 
 
     }
