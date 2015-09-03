@@ -13,6 +13,7 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
+import android.widget.ScrollView;
 import android.widget.TextView;
 
 import com.google.android.gms.ads.AdListener;
@@ -29,6 +30,7 @@ public class PreActivity extends Activity implements OnClickListener{
 
     private AdRequest adRequest;
     private AdView mAdView;
+    private ScrollView scroll;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,6 +45,7 @@ public class PreActivity extends Activity implements OnClickListener{
         title = (TextView) findViewById(R.id.title);
         next.setOnClickListener(this);
         previous.setOnClickListener(this);
+        scroll = (ScrollView) findViewById(R.id.ll);
         setBackground(pageNum);
         mAdView = (AdView) findViewById(R.id.add);
         adRequest = new AdRequest.Builder().build();
@@ -126,6 +129,7 @@ public class PreActivity extends Activity implements OnClickListener{
 
     @Override
     public void onClick(View view) {
+        scroll.fullScroll(ScrollView.FOCUS_UP);
         if(view.getId()==R.id.prev)
         {
             Log.i("tanvy","prev");

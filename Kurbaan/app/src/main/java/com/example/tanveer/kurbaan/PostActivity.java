@@ -11,6 +11,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
+import android.widget.ScrollView;
 import android.widget.TextView;
 
 import com.google.android.gms.ads.AdListener;
@@ -24,6 +25,7 @@ public class PostActivity extends Activity implements View.OnClickListener {
     private TextView next,previous,page,message,title;
     private int pageNum;
     private ImageView image;
+    private ScrollView scroll;
 
     private AdRequest adRequest;
     private AdView mAdView;
@@ -43,6 +45,7 @@ public class PostActivity extends Activity implements View.OnClickListener {
         title = (TextView) findViewById(R.id.title);
         next.setOnClickListener(this);
         previous.setOnClickListener(this);
+        scroll = (ScrollView) findViewById(R.id.ll);
         setBackground(pageNum);
 
 
@@ -64,17 +67,7 @@ public class PostActivity extends Activity implements View.OnClickListener {
 
 
     }
-    public void onPrev(View v)
-    {
 
-
-
-    }
-    public void onNext(View v)
-    {
-
-
-    }
     public void setBackground(final int i)
     {
         runOnUiThread(new Runnable() {
@@ -131,6 +124,7 @@ public class PostActivity extends Activity implements View.OnClickListener {
 
     @Override
     public void onClick(View view) {
+        scroll.fullScroll(ScrollView.FOCUS_UP);
         if(view.getId()==R.id.prev)
         {
             pageNum--;

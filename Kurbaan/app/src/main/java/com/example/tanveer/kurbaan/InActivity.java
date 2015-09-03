@@ -43,6 +43,7 @@ public class InActivity extends Activity implements View.OnClickListener{
         message = (TextView) findViewById(R.id.txt);
         image = (ImageView)  findViewById(R.id.img);
         title = (TextView) findViewById(R.id.title);
+
         next.setOnClickListener(this);
         previous.setOnClickListener(this);
 
@@ -136,6 +137,7 @@ public class InActivity extends Activity implements View.OnClickListener{
 
     @Override
     public void onClick(View view) {
+        scroll.fullScroll(ScrollView.FOCUS_UP);
         if(view.getId()==R.id.prev)
         {
             pageNum--;
