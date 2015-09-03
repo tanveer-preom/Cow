@@ -17,6 +17,7 @@ import android.widget.TextView;
 import com.google.android.gms.ads.AdListener;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.InterstitialAd;
 
 public class PostActivity extends Activity implements View.OnClickListener {
 
@@ -27,14 +28,33 @@ public class PostActivity extends Activity implements View.OnClickListener {
     private ImageView image;
     private ScrollView scroll;
 
+    private InterstitialAd mInterstitialAd;
     private AdRequest adRequest;
     private AdView mAdView;
+    private boolean flag=false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pre);
 
+        mInterstitialAd = new InterstitialAd(this);
+        mInterstitialAd.setAdUnitId("ca-app-pub-3940256099942544/1033173712");
+        requestNewInterstitial();
+
+        mInterstitialAd.setAdListener(new AdListener() {
+            @Override
+            public void onAdLoaded() {
+                Log.d("simul", "get add");
+                flag = true;
+
+            }
+
+            @Override
+            public void onAdClosed() {
+                Destroy();
+            }
+        });
 
         next= (TextView) findViewById(R.id.next);
         page= (TextView) findViewById(R.id.pageNum);
@@ -150,5 +170,27 @@ public class PostActivity extends Activity implements View.OnClickListener {
 
 
         }
+    }
+
+    private void Destroy() {
+        this.finish();
+    }
+
+    private void requestNewInterstitial() {
+        Log.d("simul", "request add");
+        AdRequest adRequest = new AdRequest.Builder()
+                .addTestDevice("81C511574C9623D4F011D0D90670AB74")
+                .build();
+
+        mInterstitialAd.loadAd(adRequest);
+    }
+
+    @Override
+    public void onBackPressed() {
+        if(flag == true) {
+            mInterstitialAd.show();
+            requestNewInterstitial();
+        } else
+            Destroy();
     }
 }
