@@ -64,7 +64,9 @@
         android:id="@+id/frame"
         android:layout_above="@+id/add"
         android:layout_below="@+id/nav"
-        android:padding="10dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginBottom="10dp"
         layout="@layout/textview_for_frame"
         />
 

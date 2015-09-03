@@ -17,7 +17,7 @@
         <ImageView
             android:layout_width="fill_parent"
             android:layout_height="0dip"
-            android:background="@drawable/index2"
+            android:background="@drawable/index"
             android:layout_weight="5"
             />
 

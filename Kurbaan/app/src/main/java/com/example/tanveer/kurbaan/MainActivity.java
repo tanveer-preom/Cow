@@ -68,17 +68,20 @@ public class MainActivity extends Activity {
     public void btn1Click(View v)
     {
         Intent i =new Intent(MainActivity.this,PreActivity.class);
+        i.putExtra("page",1);
         startActivity(i);
 
     }
     public void btn2Clic(View v)
     {
         Intent i =new Intent(MainActivity.this,InActivity.class);
+        i.putExtra("page",1);
         startActivity(i);
     }
     public void btn3Clic(View v)
     {
         Intent i =new Intent(MainActivity.this,PostActivity.class);
+        i.putExtra("page",1);
         startActivity(i);
     }
 }
