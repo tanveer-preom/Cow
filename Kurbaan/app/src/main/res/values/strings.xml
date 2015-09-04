@@ -8,7 +8,8 @@
     <string name="button1_text">কোরবানির পূর্ববর্তী প্রস্তুতি </string>
     <string name="button2_text">কোরবানি চলাকালীন প্রস্তুতি </string>
     <string name="button3_text">কোরবানির পরবর্তী প্রস্তুতি </string>
-    <string name="banner_ad_unit_id">ca-app-pub-3940256099942544/6300978111</string>
+    <string name="banner_ad_unit_id_test">ca-app-pub-3940256099942544/6300978111</string>
+    <string name="banner_ad_unit_id">ca-app-pub-7427451240190586/6655676153</string>
 
     <string name="title_activity_pre">PreActivity</string>
 

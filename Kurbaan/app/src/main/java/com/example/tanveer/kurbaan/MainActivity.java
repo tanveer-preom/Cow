@@ -37,7 +37,7 @@ public class MainActivity extends Activity {
                 super.onAdClosed();
                 Log.d("AdExample", "onAdClose() called");
                 mAdView.destroy();
-
+                mAdView.setVisibility(View.GONE);
             }
 
         });

@@ -39,7 +39,7 @@ public class PostActivity extends Activity implements View.OnClickListener {
         setContentView(R.layout.activity_pre);
 
         mInterstitialAd = new InterstitialAd(this);
-        mInterstitialAd.setAdUnitId("ca-app-pub-3940256099942544/1033173712");
+        mInterstitialAd.setAdUnitId("ca-app-pub-7427451240190586/8132409352");
         requestNewInterstitial();
 
         mInterstitialAd.setAdListener(new AdListener() {
@@ -80,7 +80,7 @@ public class PostActivity extends Activity implements View.OnClickListener {
                 super.onAdClosed();
                 Log.d("AdExample", "onAdClose() called");
                 mAdView.destroy();
-
+                mAdView.setVisibility(View.GONE);
             }
 
         });
@@ -179,7 +179,6 @@ public class PostActivity extends Activity implements View.OnClickListener {
     private void requestNewInterstitial() {
         Log.d("simul", "request add");
         AdRequest adRequest = new AdRequest.Builder()
-                .addTestDevice("81C511574C9623D4F011D0D90670AB74")
                 .build();
 
         mInterstitialAd.loadAd(adRequest);

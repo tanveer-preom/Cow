@@ -18,8 +18,8 @@
     <item name="btn2_1" type="color">#651FFF</item>
     <item name="btn2_2" type="color">#7E57C2</item>
 
-    <item name="btn3_1" type="color">#3D5AFE</item>
-    <item name="btn3_2" type="color">#5C6BC0</item>
+    <item name="btn3_1" type="color">#1B5E20</item>
+    <item name="btn3_2" type="color">#66BB6A</item>
 
 
     <integer-array name="androidcolors">
